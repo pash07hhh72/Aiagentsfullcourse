@@ -1,7 +1,7 @@
 from typing import Any
 import hashlib
 import json
-from ..Budget import Budget
+from ..Domain.Budget import Budget
 import os
 from pathlib import Path
 import time
@@ -12,13 +12,14 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path="C:\\Users\\User\\Desktop\\ITMO\\Aiagentsfullcourse\\templates\\env\\.env.example")
 
 
-RUNS_DIR = Path(os.environ.get("AGENT_RUNS_DIR", "../runs"))
+RUNS_DIR = Path(os.environ.get("TRACE_DIR", "../runs"))
 
 class Trace:
     def __init__(self, run_id: str) -> None:
-        RUNS_DIR.mkdir(parents=True, exist_ok=True)
+        path = RUNS_DIR / f"{run_id[2]}"
+        path.mkdir(parents=True, exist_ok=True)
         self.run_id = run_id
-        self.path = RUNS_DIR / f"{run_id}.jsonl"
+        self.path = path / f"{run_id}.jsonl"
         self._fh = self.path.open("a", encoding="utf-8")
 
     def _write(self, rec: dict[str, Any]) -> None:

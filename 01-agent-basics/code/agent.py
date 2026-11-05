@@ -22,8 +22,8 @@ import hashlib
 import sys
 import time
 from typing import Any
-from .Task import Task
-from .Budget import Budget
+from .Domain.Task import Task
+from .Domain.Budget import Budget
 from dotenv import load_dotenv
 from .Tool.ToolsResult import ToolResult
 from .Tool.ToolImplementation import Tool, ToolRegistry
@@ -32,7 +32,7 @@ from .Tool.Tools.Factorial import factorial
 from .Tool.Tools.PythonInterpretator import apply_script
 from .Tool.Tools.ReadFile import read_file
 from .LLM.OpenRouterLLM import OpenRouterLLM
-from .ValueObject import ModelAnswer
+from .Domain.ValueObjects.ValueObject import ModelAnswer
 
 
 load_dotenv(dotenv_path="C:\\Users\\User\\Desktop\\ITMO\\Aiagentsfullcourse\\templates\\env\\.env.example")
@@ -226,11 +226,10 @@ DEMO_TOOLS = ToolRegistry([
 # --------------------------------------------------------------------------- #
 
 def main(argv: list[str] | None = None) -> int:
-    print(__package__)
     ap = argparse.ArgumentParser(description="Модуль 01: минимальное ядро агента")
     ap.add_argument("--task", default="прочитай файл \"C:\\Users\\User\\Desktop\\test.txt\" и выведи в ответе, что там написано, так же если там написана какая-то математическая задача реши")
-    ap.add_argument("--max-steps", type=int, default=16)
-    ap.add_argument("--max-cost", type=float, default=0.50)
+    ap.add_argument("--max-steps", type=int, default=160)
+    ap.add_argument("--max-cost", type=float, default=500)
     args = ap.parse_args(argv)
 
     run_id = "r-" + hashlib.sha256(

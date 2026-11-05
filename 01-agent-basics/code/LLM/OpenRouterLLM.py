@@ -133,7 +133,7 @@ class OpenRouterLLM:
             "OPENROUTER_AGENT_MODEL", "nvidia/nemotron-3.5-super-vl:free"
         )
         self.api_key = (
-            os.environ.get("OPENAI_API_KEY", "No_Key")
+            os.environ.get("OPENROUTER_API_KEY", "No_Key")
         )
         self.price_in = float(os.environ.get("PRICE_IN_PER_MTOK", "0.15"))
         self.price_out = float(os.environ.get("PRICE_OUT_PER_MTOK", "0.60"))

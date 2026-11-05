@@ -1,5 +1,5 @@
 from decimal import Decimal
-from numbers import Real
+from numbers import Real, Complex
 
 
 class Prompt:
