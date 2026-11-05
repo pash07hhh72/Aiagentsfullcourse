@@ -48,3 +48,8 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+---
+game/
+files/
+!__init__.py
