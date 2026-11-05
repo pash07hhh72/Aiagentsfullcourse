@@ -9,7 +9,7 @@ from ..Tool.ToolsResult import ToolResult
 from ..Debugging.Reply import Reply
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path="C:\\Users\\User\\Desktop\\ITMO\\Aiagentsfullcourse\\templates\\env\\.env.example")
+load_dotenv(dotenv_path="C:\\Users\\User\\Desktop\\ITMO\\Aiagentsfullcourse\\templates\\env\\.env")
 
 
 RUNS_DIR = Path(os.environ.get("TRACE_DIR", "../runs"))

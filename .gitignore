@@ -50,6 +50,6 @@ Thumbs.db
 *.swp
 
 ---
-/game/
-/files/
+game/
+files/
 !__init__.py

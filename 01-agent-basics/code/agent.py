@@ -35,7 +35,7 @@ from .LLM.OpenRouterLLM import OpenRouterLLM
 from .Domain.ValueObjects.ValueObject import ModelAnswer
 
 
-load_dotenv(dotenv_path="C:\\Users\\User\\Desktop\\ITMO\\Aiagentsfullcourse\\templates\\env\\.env.example")
+load_dotenv(dotenv_path="C:\\Users\\User\\Desktop\\ITMO\\Aiagentsfullcourse\\templates\\env\\.env")
 
 
 
